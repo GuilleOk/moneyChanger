@@ -30,7 +30,7 @@ export const App = () => {
 
   return (
     <>
-      <h1 style={{ textAlign: 'center' }} className='mt-3 mb-5'>App For Change Money Values</h1>
+      <h1 style={{ textAlign: 'center' }} className='mt-3 mb-5'>Money Values Changer</h1>
       <form className='d-flex justify-content-around'>
         <div className='mb-3'>
           <h5>Amount to change</h5>
