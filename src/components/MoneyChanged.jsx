@@ -18,7 +18,7 @@ const MoneyChanged = ({ amountmoneyToChange, actualChange, countryReference }) =
         <div className={`input-group-text ${countryReference === '' ? 'd-none' : ''}`} id='addon-wrapping'>
           <img src={countryReference.flag} alt={countryReference.id} />
         </div>
-        <input type='text' className='form-control' style={{ borderTopLeftRadius: `${countryReference === '' ? '10px' : ''}`, borderBottomLeftRadius: `${countryReference === '' ? '10px' : ''}` }} placeholder='Amount changed' id='amountChanged' value={resultToShow} readOnly />
+        <input type='text' className='form-control' style={{ borderTopLeftRadius: `${countryReference === '' ? '8px' : ''}`, borderBottomLeftRadius: `${countryReference === '' ? '8px' : ''}` }} placeholder='Amount changed' id='amountChanged' value={resultToShow} readOnly />
       </div>
 
     </div>

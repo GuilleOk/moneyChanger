@@ -12,7 +12,7 @@ const InputReference = ({ setAmountMoneyToChange, amountmoneyToChange, countryTo
       <div className={`input-group-text ${countryToChange === '' ? 'd-none' : ''}`} id='addon-wrapping'>
         <img src={flag} alt={country.country} />
       </div>
-      <input type='text' className='form-control' onChange={handlerChange} placeholder='Amount to change' id='amountToChange' value={(amountmoneyToChange !== 0) ? amountmoneyToChange : ''} style={{ borderTopLeftRadius: `${countryToChange === '' ? '10px' : ''}`, borderBottomLeftRadius: `${countryToChange === '' ? '10px' : ''}` }} />
+      <input type='text' className='form-control' onChange={handlerChange} placeholder='Amount to change' id='amountToChange' value={(amountmoneyToChange !== 0) ? amountmoneyToChange : ''} style={{ borderTopLeftRadius: `${countryToChange === '' ? '8px' : ''}`, borderBottomLeftRadius: `${countryToChange === '' ? '8px' : ''}` }} />
     </div>
   )
 }
