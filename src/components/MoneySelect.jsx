@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import CountryOption from './CountryOption'
+import { handlerSelect } from '../handlers/handlerSelect'
 
 const MoneySelect = ({ countries, setCountries, setCountryToChange, setCountryReference, switchMoneyType }) => {
   const [selectedOption, setSelectedOption] = useState('')
@@ -18,25 +19,13 @@ const MoneySelect = ({ countries, setCountries, setCountryToChange, setCountryRe
   const handlerChange = (e) => {
     const selectElements = Array.from(e.target.options)
     // eslint-disable-next-line array-callback-return
-    selectElements.map(element => {
-      if (element.selected) {
-        // eslint-disable-next-line array-callback-return
-        countries.map(country => {
-          if (switchMoneyType) { // si switchMoneyType == true entonces me refiero a countryToChange
-            // de lo contrario a countryReference
-            if (country.id === element.id) {
-              setCountryToChange({ country: country.country, flag: country.flag, id: country.id })
-              setSelectedOption(`${country.country} (${country.id})`)
-            }
-          } else {
-            if (country.id === element.id) {
-              setSelectedOption(`${country.country} (${country.id})`)
-              setCountryReference({ country: country.country, flag: country.flag, id: country.id })
-            }
-          }
-        })
-      }
-    })
+    const { countryS, selectedO } = handlerSelect({ selectElements, countries })
+    setSelectedOption(selectedO)
+    if (switchMoneyType) { // si switchMoneyType == true entonces me refiero a countryToChange
+      setCountryToChange(countryS)
+    } else {
+      setCountryReference(countryS)
+    }
   }
   return (
     <>
