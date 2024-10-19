@@ -29,16 +29,12 @@ const MoneySelect = ({ countries, setCountries, setCountryToChange, setCountryRe
               country.countryToChange = true
               setCountryToChange({ country: country.country, flag: country.flag, id: country.id })
               setSelectedOption(`${country.country} (${country.id})`)
-            } else {
-              country.countryToChange = false
             }
           } else {
             if (country.id === element.id) {
               country.countryReference = true
               setSelectedOption(`${country.country} (${country.id})`)
               setCountryReference({ country: country.country, flag: country.flag, id: country.id })
-            } else {
-              country.countryReference = false
             }
           }
         })
@@ -49,7 +45,7 @@ const MoneySelect = ({ countries, setCountries, setCountryToChange, setCountryRe
   return (
     <>
       <select onChange={handlerChange} value={selectedOption} className='form-select w-100'>
-        <option value=' ' style={{display: 'none'}}> </option>
+        <option value=' ' style={{ display: 'none' }}> </option>
         {
           countries.map(({ id, country }) => {
             return (
