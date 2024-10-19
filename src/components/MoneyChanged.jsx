@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const MoneyChanged = ({ amountmoneyToChange, actualChange, countryReference }) => {
+const MoneyChanged = ({ amountmoneyToChange, actualChange, countryToChange }) => {
   let result
   const [resultToShow, setResultToShow] = useState(0)
 
@@ -15,10 +15,10 @@ const MoneyChanged = ({ amountmoneyToChange, actualChange, countryReference }) =
     <div>
       <h5>Money changed</h5>
       <div className='input-group flex-nowrap'>
-        <div className={`input-group-text ${countryReference === '' ? 'd-none' : ''}`} id='addon-wrapping'>
-          <img src={countryReference.flag} alt={countryReference.id} />
+        <div className={`input-group-text ${countryToChange === '' ? 'd-none' : ''}`} id='addon-wrapping'>
+          <img src={countryToChange.flag} alt={countryToChange.id} />
         </div>
-        <input type='text' className='form-control' style={{ borderTopLeftRadius: `${countryReference === '' ? '8px' : ''}`, borderBottomLeftRadius: `${countryReference === '' ? '8px' : ''}` }} placeholder='Amount changed' id='amountChanged' value={resultToShow} readOnly />
+        <input type='text' className='form-control' style={{ borderTopLeftRadius: `${countryToChange === '' ? '8px' : ''}`, borderBottomLeftRadius: `${countryToChange === '' ? '8px' : ''}` }} placeholder='Amount changed' id='amountChanged' value={resultToShow} readOnly />
       </div>
 
     </div>

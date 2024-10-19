@@ -28,18 +28,18 @@ export const App = () => {
       <form className='d-flex justify-content-around'>
         <div className='mb-3'>
           <h5>Amount to change</h5>
-          <InputReference setAmountMoneyToChange={setAmountMoneyToChange} countryToChange={countryToChange} amountmoneyToChange={amountmoneyToChange} />
+          <InputReference setAmountMoneyToChange={setAmountMoneyToChange} countryReference={countryReference} amountmoneyToChange={amountmoneyToChange} />
         </div>
         <div className='mb-3'>
-          <h5>Country to change money</h5>
-          <MoneySelect className='moneySelect' countries={countries} switchMoneyType setCountryReference={setCountryReference} setCountryToChange={setCountryToChange} setCountries={setCountries} />
-        </div>
-        <div className='mb-3'>
-          <h5>Country to take money reference</h5>
+          <h5>Change from</h5>
           <MoneySelect countries={countries} switchMoneyType={false} setCountryReference={setCountryReference} setCountryToChange={setCountryToChange} setCountries={setCountries} />
         </div>
         <div className='mb-3'>
-          <MoneyChanged amountmoneyToChange={amountmoneyToChange} actualChange={actualChange} countryReference={countryReference} />
+          <h5>Change to</h5>
+          <MoneySelect className='moneySelect' countries={countries} switchMoneyType setCountryReference={setCountryReference} setCountryToChange={setCountryToChange} setCountries={setCountries} />
+        </div>
+        <div className='mb-3'>
+          <MoneyChanged amountmoneyToChange={amountmoneyToChange} actualChange={actualChange} countryToChange={countryToChange} />
         </div>
       </form>
 
