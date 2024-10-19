@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 import InputReference from './components/InputReference'
 import MoneySelect from './components/MoneySelect'
 import MoneyChanged from './components/MoneyChanged'
+import { useGetActualChange } from './hooks/useGetActualChange'
 
 export const App = () => {
   const [amountmoneyToChange, setAmountMoneyToChange] = useState(0)
   const [countryToChange, setCountryToChange] = useState('') // moneda a cambiar
   const [countries, setCountries] = useState([])// arreglo con todas las monedas
   const [countryReference, setCountryReference] = useState('')
-  const [actualChange, setActualChange] = useState(0)
+  const { actualChange, getChange } = useGetActualChange({ countryToChange, countryReference })
   useEffect(() => {
     if (isNaN(amountmoneyToChange) || /^(0\d)/.test(amountmoneyToChange)) {
       // eslint-disable-next-line no-undef
@@ -18,14 +19,7 @@ export const App = () => {
   }, [amountmoneyToChange])
 
   useEffect(() => {
-    if (countryToChange.length === 0 || countryReference.length === 0) return
-
-    const LINK = `https://v6.exchangerate-api.com/v6/5575ff74de7c72ef8f39c918/latest/${countryReference.id}`
-    fetch(LINK)
-      .then(response => response.json())
-      .then(data => {
-        setActualChange(data.conversion_rates[countryToChange.id])
-      })
+    getChange()
   }, [countryToChange, countryReference])
 
   return (
