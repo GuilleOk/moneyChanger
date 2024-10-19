@@ -16,23 +16,20 @@ const MoneySelect = ({ countries, setCountries, setCountryToChange, setCountryRe
   }, [])
 
   const handlerChange = (e) => {
-    const countriesCopy = [...countries]
     const selectElements = Array.from(e.target.options)
     // eslint-disable-next-line array-callback-return
     selectElements.map(element => {
       if (element.selected) {
         // eslint-disable-next-line array-callback-return
-        countriesCopy.map(country => {
+        countries.map(country => {
           if (switchMoneyType) { // si switchMoneyType == true entonces me refiero a countryToChange
             // de lo contrario a countryReference
             if (country.id === element.id) {
-              country.countryToChange = true
               setCountryToChange({ country: country.country, flag: country.flag, id: country.id })
               setSelectedOption(`${country.country} (${country.id})`)
             }
           } else {
             if (country.id === element.id) {
-              country.countryReference = true
               setSelectedOption(`${country.country} (${country.id})`)
               setCountryReference({ country: country.country, flag: country.flag, id: country.id })
             }
@@ -40,7 +37,6 @@ const MoneySelect = ({ countries, setCountries, setCountryToChange, setCountryRe
         })
       }
     })
-    setCountries(countriesCopy)
   }
   return (
     <>
