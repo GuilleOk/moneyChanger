@@ -1,0 +1,38 @@
+[
+    {
+        "id": "USD",
+        "country": "United State",
+        "flag": "./assets/images/icons8-emoji-de-estados-unidos-48.png"
+    },
+    {
+        "id": "CAD",
+        "country": "Canada",
+        "flag": "./assets/images/icons8-canada-emoji-48.png"
+    },
+    {
+        "id": "BRL",
+        "country": "Brazil",
+        "flag": "./assets/images/icons8-emoji-de-brasil-48.png"
+    },
+    {
+        "id": "JPY",
+        "country": "Japan",
+        "flag": "./assets/images/icons8-emoji-japon-48.png"
+    },
+    {
+        "id": "GBP",
+        "country": "United Kingdom",
+        "flag": "./assets/images/icons8-emoji-reino-unido-48.png"
+    },
+    {
+        "id": "EUR",
+        "country": "European Union",
+        "flag": "./assets/images/icons8-emoji-unión-europea-48.png"
+    },
+    {
+        "id": "CUP",
+        "country": "Cuba",
+        "flag": "./assets/images/icons8-prueba-emoji-48.png"
+    }
+]
+
