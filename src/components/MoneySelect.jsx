@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import CountryOption from './CountryOption'
 import { handlerSelect } from '../handlers/handlerSelect'
+import countriesList from '../countries.json'
 
 const MoneySelect = ({ countries, setCountries, setCountryToChange, setCountryReference, switchMoneyType }) => {
   const [selectedOption, setSelectedOption] = useState('')
 
   useEffect(() => {
-    fetch('../../assets/countries.json')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Error en el fetch')
-        } else { return response.json() }
-      })
-      .then(data => setCountries(data))
-      .catch(error => console.error('Error en el fetch de datos: ', error))
+    setCountries(countriesList)
   }, [])
 
   const handlerChange = (e) => {
